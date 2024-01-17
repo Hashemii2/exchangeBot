@@ -4,8 +4,9 @@ const getAllCurrency = require('./allCurrency');
 const findDigitalCurrency = require('./findDigitalCurrency');
 const getAllDigitalCurrency = require('./getAllDigitalCurrency');
 const Stock = require('./stockScraper');
+const { apiKey } = require('./config');
 
-const bot = new Telegraf('5976791469:AAGnF8yA89W8D7lsQiBMt6UTEyJ7T3MQnS8');
+const bot = new Telegraf(apiKey);
 
 let arrBot = ['جانم', 'بله', 'بله عزیزم', 'امر بفرمایید', 'در خدمتم'];
 let arrHi = ['سلام', 'سلام عزیزم', 'درود', 'هی', 'خوبی', 'چطوری'];
