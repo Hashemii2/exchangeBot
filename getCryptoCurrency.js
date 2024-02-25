@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-async function getDigitalCurrency() {
+async function getCryptoCurrency() {
   const { data } = await axios.get('https://www.tgju.org/');
 
   const $ = cheerio.load(data);
@@ -39,6 +39,6 @@ async function getDigitalCurrency() {
   return list;
 }
 
-// getDigitalCurrency();
+// getCryptoCurrency();
 
-module.exports = getDigitalCurrency;
+module.exports = getCryptoCurrency;

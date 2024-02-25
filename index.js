@@ -1,8 +1,8 @@
 const { Telegraf } = require('telegraf');
 const findCurrency = require('./currency');
 const getAllCurrency = require('./allCurrency');
-const findDigitalCurrency = require('./findDigitalCurrency');
-const getAllDigitalCurrency = require('./getAllDigitalCurrency');
+const findCryptoCurrency = require('./findCryptoCurrency');
+const getAllCryptoCurrency = require('./getAllCryptoCurrency');
 const Stock = require('./stockScraper');
 const { apiKey } = require('./config');
 
@@ -98,19 +98,19 @@ bot.hears('نرخ ارز', async (ctx) => {
 });
 
 bot.hears('بیت کوین', async (ctx) => {
-  bot.telegram.sendMessage(ctx.chat.id, await findDigitalCurrency('بیت کوین'), {
+  bot.telegram.sendMessage(ctx.chat.id, await findCryptoCurrency('بیت کوین'), {
     reply_to_message_id: ctx.message.message_id,
   });
 });
 
 bot.hears('اتریوم', async (ctx) => {
-  bot.telegram.sendMessage(ctx.chat.id, await findDigitalCurrency('اتریوم'), {
+  bot.telegram.sendMessage(ctx.chat.id, await findCryptoCurrency('اتریوم'), {
     reply_to_message_id: ctx.message.message_id,
   });
 });
 
 bot.hears('ارز دیجیتال', async (ctx) => {
-  bot.telegram.sendMessage(ctx.chat.id, await getAllDigitalCurrency(), {
+  bot.telegram.sendMessage(ctx.chat.id, await getAllCryptoCurrency(), {
     reply_to_message_id: ctx.message.message_id,
   });
 });
